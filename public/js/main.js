@@ -1,44 +1,12 @@
+import config from "/config.json" assert { type: "json" }
+
 const key_audio = ["key1.wav", "key2.wav", "key3.wav"];
-const games = [
-	{
-		name: "slope",
-		title: "Slope",
-	},
-	{
-		name: "eaglercraft",
-		title: "Eaglercraft",
-	},
-	{
-		name: "mario",
-		title: "Mario"
-	},
-	{
-		name: "flappy-bird",
-		title: "Flappy Bird",
-	},
-	{
-		name: "dao-2048",
-		title: "2048",
-	},
-	{
-		name: "tetris",
-		title: "Tetris",
-	},
-	{
-		name: "cookieclicker",
-		title: "Cookie Clicker",
-	},
-	{
-		name: "getting-over-it",
-		title: "Getting Over It",
-	}
-];
-const games_path = "games";
 
 const game_list = document.getElementById("game-list");
 
-games.forEach(game => {
-	game_list.innerHTML += `<li class="game"><a class="game-link" href="${games_path}/${game.name}/">${game.title}</a></li>`;
+config.games.forEach(game => {
+	const href = game.disabled ? "javascript: void(0)" : `${config.games_path}${game.name}/`;
+	game_list.innerHTML += `<li class="game"><a class="game-link" href="${href}">${game.title}</a></li>`;
 });
 
 document.addEventListener("keydown", () => {

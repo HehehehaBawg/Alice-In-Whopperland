@@ -1,0 +1,57 @@
+{
+	"games_path": "games/",
+	"games": [
+		{
+			"name": "slope",
+			"path": "slope",
+			"title": "Slope"
+		},
+		{
+			"name": "eaglercraft",
+			"path": "eaglercraft",
+			"title": "Eaglercraft"
+		},
+		{
+			"name": "mario",
+			"path": "mario",
+			"title": "Mario"
+		},
+		{
+			"name": "flappy-bird",
+			"path": "flappy-bird",
+			"title": "Flappy Bird"
+		},
+		{
+			"name": "2048",
+			"path": "dao-2048",
+			"title": "2048"
+		},
+		{
+			"name": "tetris",
+			"path": "tetris",
+			"title": "Tetris"
+		},
+		{
+			"name": "cookie-clicker",
+			"path": "cookieclicker",
+			"title": "Cookie Clicker"
+		},
+		{
+			"name": "getting-over-it",
+			"path": "getting-over-it",
+			"title": "Getting Over It"
+		},
+		{
+			"name": "subway-surfers",
+			"path": "subway-surfers",
+			"title": "Subway Surfers (Coming Soon)",
+			"disabled": true
+		},
+		{
+			"name": "discord",
+			"path": null,
+			"title": "Discord (Coming Soon)",
+			"disabled": true
+		}
+	]
+}
