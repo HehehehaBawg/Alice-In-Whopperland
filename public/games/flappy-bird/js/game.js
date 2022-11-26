@@ -25,6 +25,8 @@ export class Game {
 	restart() {
 		this.bird = new Bird(this.images.bird, this.config);
 		this.pipes = [];
+		this.last_target_pipe = null;
+		this.high_score = Math.max(this.high_score,  this.score ?? 0);
 		this.score = 0;
 		this.background_x = 0;
 		this.interval = 0;
@@ -39,6 +41,10 @@ export class Game {
 		};
 
 		this.restart();
+
+		this.ctx.canvas.addEventListener("mousedown", () => this.bird.flap());
+
+		this.ctx.canvas.addEventListener("contextmenu", e => e.preventDefault());
 
 		document.addEventListener("keydown", e => {
 			if(!Object.values(this.config.keybinds).includes(e.key)) return;
@@ -87,10 +93,12 @@ export class Game {
 				}
 			}
 
-			this.score++;
-			this.high_score = Math.max(this.score, this.high_score);
-
 			const nearest_pipe = this.pipes.find(pipe => pipe.position.x > this.bird.position.x);
+			if (this.last_target_pipe == null) this.last_target_pipe = nearest_pipe;
+			if (this.last_target_pipe != nearest_pipe) {
+				this.score++;
+				this.last_target_pipe = nearest_pipe;
+			}
 			this.target_position = {
 				x: nearest_pipe.position.x + this.images.pipetop.width / 2,
 				y: nearest_pipe.position.y + this.images.pipetop.height + this.config.hole_size / 2,
