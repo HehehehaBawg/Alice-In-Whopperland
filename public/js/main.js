@@ -13,7 +13,7 @@ const games = [
 		title: "Mario"
 	},
 	{
-		name: "flappy_bird",
+		name: "flappy-bird",
 		title: "Flappy Bird",
 	},
 	{
@@ -27,6 +27,10 @@ const games = [
 	{
 		name: "cookieclicker",
 		title: "Cookie Clicker",
+	},
+	{
+		name: "getting-over-it",
+		title: "Getting Over It",
 	}
 ];
 const games_path = "games";
