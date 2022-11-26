@@ -9,7 +9,7 @@ const games = [
 		title: "Eaglercraft",
 	},
 	{
-		name: "mario",
+		name: "mariohtml5",
 		title: "Mario"
 	},
 	{
