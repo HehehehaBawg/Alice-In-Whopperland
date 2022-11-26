@@ -3,7 +3,7 @@
 	"games": [
 		{
 			"name": "slope",
-			"path": "slope",
+			"path": "Slope-Game",
 			"title": "Slope"
 		},
 		{
@@ -40,6 +40,16 @@
 			"name": "getting-over-it",
 			"path": "getting-over-it",
 			"title": "Getting Over It"
+		},
+		{
+			"name": "retrobowl",
+			"path": "retrobowl",
+			"title": "Retrobowl"
+		},
+		{
+			"name": "geometry-dash",
+			"path": "geometry-dash",
+			"title": "Geometry Dash"
 		},
 		{
 			"name": "subway-surfers",

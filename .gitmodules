@@ -1,6 +1,12 @@
-[submodule "public/games/dao-2048"]
-	path = public/games/dao-2048
+[submodule "games/dao-2048"]
+	path = games/dao-2048
 	url = https://github.com/DaoCloud/dao-2048
-[submodule "public/games/cookieclicker"]
-	path = public/games/cookieclicker
+[submodule "games/cookieclicker"]
+	path = games/cookieclicker
 	url = https://github.com/ozh/cookieclicker
+[submodule "games/Slope-Game"]
+	path = games/Slope-Game
+	url = https://github.com/cgolden15/Slope-Game
+[submodule "games/retrobowl"]
+	path = games/retrobowl
+	url = https://github.com/science246/retrobowl.git
