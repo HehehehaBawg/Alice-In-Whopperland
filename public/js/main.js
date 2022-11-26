@@ -23,6 +23,10 @@ const games = [
 	{
 		name: "tetris",
 		title: "Tetris",
+	},
+	{
+		name: "cookieclicker",
+		title: "Cookie Clicker",
 	}
 ];
 const games_path = "games";
