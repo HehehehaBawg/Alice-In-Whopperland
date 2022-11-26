@@ -15,6 +15,14 @@ const games = [
 	{
 		name: "flappy_bird",
 		title: "Flappy Bird",
+	},
+	{
+		name: "dao-2048",
+		title: "2048",
+	},
+	{
+		name: "tetris",
+		title: "Tetris",
 	}
 ];
 const games_path = "games";
