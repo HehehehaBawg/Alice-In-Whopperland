@@ -1,0 +1,51 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	text-align: center;
+	background-color: black;
+	margin: 0px;
+}
+
+@font-face {
+	font-family: ModeSeven;
+	src: url(cern-terminal.woff);
+}
+
+* {
+	font-family: ModeSeven;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.game {
+	margin: 1em;
+	padding: 1.5em;
+	border: 1px solid black;
+}
+
+.game-link, .game-link:visited, #title, footer {
+	text-decoration: none;
+	color: hsl(150, 100%, 50%);
+}
+
+.game-link, .game-link:visited {
+	font-size: 25px;
+}
+
+#title {
+	margin-top: 2em;
+	font-family: Consolas, 'Courier New', monospace;
+	color: rgb(14, 168, 64);
+}
+
+footer {
+	flex-shrink: 0;
+}
+
+.game:hover {
+	background-color: rgb(17, 17, 17);
+}
