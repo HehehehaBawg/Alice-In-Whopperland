@@ -1,0 +1,3 @@
+[submodule "public/games/dao-2048"]
+	path = public/games/dao-2048
+	url = https://github.com/DaoCloud/dao-2048
