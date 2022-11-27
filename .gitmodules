@@ -2,7 +2,7 @@
 	path = games/2048
 	url = https://github.com/DaoCloud/dao-2048
 [submodule "games/cookie-clicker"]
-	path = games/cookieclicker
+	path = games/cookie-clicker
 	url = https://github.com/ozh/cookieclicker
 [submodule "games/slope"]
 	path = games/slope
