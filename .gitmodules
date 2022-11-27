@@ -9,7 +9,7 @@
 	url = https://github.com/MartinTintin3/Slope-Game
 [submodule "games/retrobowl"]
 	path = games/retrobowl
-	url = https://github.com/science246/retrobowl.git
+	url = https://github.com/science246/retrobowl
 [submodule "games/tetris"]
 	path = games/tetris
 	url = https://github.com/cgolden15/tetris
