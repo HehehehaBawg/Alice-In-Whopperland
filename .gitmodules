@@ -6,7 +6,7 @@
 	url = https://github.com/ozh/cookieclicker
 [submodule "games/Slope-Game"]
 	path = games/Slope-Game
-	url = https://github.com/cgolden15/Slope-Game
+	url = https://github.com/MartinTintin3/Slope-Game
 [submodule "games/retrobowl"]
 	path = games/retrobowl
 	url = https://github.com/science246/retrobowl.git
