@@ -17,7 +17,7 @@ app.get("/config.json", (req, res) => {
 });
 
 app.get(`/${config.games_path.replace("/", "")}/:game/*`, (req, res) => {
-	const game = config.games.find(g => g.name == req.params.game);
+	const game = config.games.find(g => g.path == req.params.game);
 
 	if (game == undefined) {
 		res.status(404);

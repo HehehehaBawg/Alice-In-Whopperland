@@ -2,64 +2,58 @@
 	"games_path": "games/",
 	"games": [
 		{
-			"name": "slope",
-			"path": "Slope-Game",
-			"title": "Slope"
+			"name": "Slope",
+			"path": "slope"
 		},
 		{
-			"name": "eaglercraft",
-			"path": "eaglercraft",
-			"title": "Eaglercraft"
+			"name": "Eaglercraft",
+			"path": "eaglercraft"
 		},
 		{
-			"name": "mario",
-			"path": "mario",
-			"title": "Mario"
+			"name": "Mario",
+			"path": "mario"
 		},
 		{
-			"name": "flappy-bird",
-			"path": "flappy-bird",
-			"title": "Flappy Bird"
+			"name": "Flappy Bird",
+			"path": "flappy-bird"
 		},
 		{
 			"name": "2048",
-			"path": "dao-2048",
-			"title": "2048"
+			"path": "2048"
 		},
 		{
-			"name": "tetris",
-			"path": "tetris",
-			"title": "Tetris"
+			"name": "Tetris",
+			"path": "tetris"
 		},
 		{
-			"name": "cookie-clicker",
-			"path": "cookieclicker",
-			"title": "Cookie Clicker"
+			"name": "Cookie Clicker",
+			"path": "cookieclicker"
 		},
 		{
-			"name": "getting-over-it",
-			"path": "getting-over-it",
-			"title": "Getting Over It"
+			"name": "Getting Over It",
+			"path": "getting-over-it"
 		},
 		{
-			"name": "retrobowl",
-			"path": "retrobowl",
-			"title": "Retrobowl"
+			"name": "Retrobowl",
+			"path": "retrobowl"
 		},
 		{
-			"name": "geometry-dash",
-			"path": "geometry-dash",
-			"title": "Geometry Dash"
+			"name": "Geometry Dash",
+			"path": "geometry-dash"
 		},
 		{
-			"name": "subway-surfers",
+			"name": "Chrome Dino Game",
+			"path": "dino-game"
+		},
+		{
+			"name": "Subway Surfers",
 			"path": "subway-surfers",
 			"title": "Subway Surfers (Coming Soon)",
 			"disabled": true
 		},
 		{
-			"name": "discord",
-			"path": null,
+			"name": "Discord",
+			"path": "discord",
 			"title": "Discord (Coming Soon)",
 			"disabled": true
 		}
