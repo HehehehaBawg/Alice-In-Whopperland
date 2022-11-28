@@ -42,15 +42,23 @@
 			"path": "dino-game"
 		},
 		{
-			"name": "Subway Surfers",
+			"name": "1v1.lol",
+			"path": "1v1",
+			"proxy_url": "https://1v1.lol"
+		},
+		{
+			"name": "Appel",
+			"path": "appel"
+		},
+		{
+			"name": "Subway Surfers (Coming Soon)",
 			"path": "subway-surfers",
-			"title": "Subway Surfers (Coming Soon)",
 			"disabled": true
 		},
 		{
-			"name": "Discord",
+			"name": "Discord (Coming Soon)",
 			"path": "discord",
-			"title": "Discord (Coming Soon)",
+			"proxy_url": "https://discord.com/app",
 			"disabled": true
 		}
 	]
