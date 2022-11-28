@@ -1,26 +1,64 @@
+require("dotenv").config();
+
 const express = require("express");
 const https = require("https");
 const path = require("path");
 const fs = require("fs");
 const axios = require("axios").default;
 
+// Analytics
+const { Analytics } = require("analytics");
+const googleAnalytics = require("@analytics/google-analytics").default;
+const googleTagManager = require("@analytics/google-tag-manager");
+const ua = require("universal-analytics");
+const { Visitor } = require("universal-analytics");
+const geoip = require("geoip-lite");
+
+/*const Sequelize = require("sequelize");
+const sequelize = new Sequelize("sqlite::memory:");
+
+const Client = sequalize.define("Client", {
+	uuid: {
+		type: DataTypes.UUID,
+		allowNull: false,
+	},
+	ip: {
+		type: Sequelize.DataTypes.STRING,
+	}
+});
+Client.sync();*/
+
+const analytics = ua(process.env.GOOGLE_ANALYTICS_ID);
+
 const app = express();
 
 // HTTP -> HTTPS
-express().get("*", (req, res) => res.redirect(`https://${req.headers.host}${req.url}`)).listen(80);
+express().get("*", (req, res) => res.redirect(`https://${req.headers.host}${req.url}`)).listen(process.env.HTTP_PORT || 80, "0.0.0.0");
 
 const ssl_config = {
-	key: fs.readFileSync("/etc/letsencrypt/live/melvin4life.com/privkey.pem"),
-	cert: fs.readFileSync("/etc/letsencrypt/live/melvin4life.com/cert.pem"),
+	key: fs.readFileSync(process.env.SSL_KEY_PATH),
+	cert: fs.readFileSync(process.env.SSL_CERT_PATH),
 };
 
-const port = 443;
+const port = process.env.HTTPS_PORT || 443;
 
-https.createServer(ssl_config, app).listen(port, () => {
+https.createServer(ssl_config, app).listen(port, "0.0.0.0", () => {
 	console.log(`HTTPS on port ${port}`);
 });
 
 const config = require(path.join(__dirname, "config.json"));
+
+const send_analytics = async req => {
+	//const geo = geoip.lookup(req.ip);
+	/*analytics.set("uip", req.ip);
+	console.log(req.ip);*/
+	analytics.pageview(req.path).send();
+};
+
+app.use((req, res, next) => {
+	if (req.path == "/") send_analytics(req);
+	next();
+});
 
 app.use(express.static("public"));
 
@@ -86,6 +124,7 @@ app.get(`/${config.games_path.replace("/", "")}/:game`, async (req, res) => {
 	if (!req.url.endsWith("/")) {
 		res.status(301).redirect(req.url + "/");
 	} else {
+		send_analytics(req);
 		await game_request(req, res);
 	}
 });
