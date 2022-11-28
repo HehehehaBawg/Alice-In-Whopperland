@@ -28,7 +28,7 @@ const Client = sequalize.define("Client", {
 });
 Client.sync();*/
 
-const analytics = ua(process.env.GOOGLE_ANALYTICS_ID);
+//const analytics = ua(process.env.GOOGLE_ANALYTICS_ID);
 
 const app = express();
 
@@ -49,10 +49,12 @@ https.createServer(ssl_config, app).listen(port, "0.0.0.0", () => {
 const config = require(path.join(__dirname, "config.json"));
 
 const send_analytics = async req => {
-	//const geo = geoip.lookup(req.ip);
-	/*analytics.set("uip", req.ip);
-	console.log(req.ip);*/
-	analytics.pageview(req.path).send();
+	const geo = geoip.lookup(req.ip);
+	const a = ua(process.env.GOOGLE_ANALYTICS_ID, req.ip, { strictCidFormat: false })
+	//a.set("uip", req.ip);
+	a.set("geoip", geo.country);
+
+	a.pageview(req.path).send();
 };
 
 app.use((req, res, next) => {
