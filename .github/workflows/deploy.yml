@@ -10,14 +10,13 @@ jobs:
     steps:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.5
-        env:
-          DIR: ${{ secrets.SSH_PATH }}
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          envs: DIR
           script: |
             cd ${{ secrets.SSH_PATH }}
-            touch hel
+            git reset --hard HEAD
+            git clean -f -d
+            git pull
