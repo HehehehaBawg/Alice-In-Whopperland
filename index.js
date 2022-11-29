@@ -57,7 +57,7 @@ if (env == "production") {
 const config = require(path.join(__dirname, "config.json"));
 
 const send_analytics = async req => {
-	if (dev == "development") return;
+	if (env == "development") return;
 	const a = ua(process.env.GOOGLE_ANALYTICS_ID, req.ip, { strictCidFormat: false })
 	//a.set("uip", req.ip);
 	try {
