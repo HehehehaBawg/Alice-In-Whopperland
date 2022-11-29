@@ -1,24 +1,18 @@
 [submodule "games/2048"]
 	path = games/2048
 	url = https://github.com/DaoCloud/dao-2048.git
-	branch = main
 [submodule "games/dino-game"]
 	path = games/dino-game
 	url = https://github.com/wayou/t-rex-runner.git
-	branch = gh-pages
 [submodule "games/cookie-clicker"]
 	path = games/cookie-clicker
 	url = https://github.com/ozh/cookieclicker.git
-	branch = gh-pages
 [submodule "games/retrobowl"]
 	path = games/retrobowl
 	url = https://github.com/science246/retrobowl.git
-	branch = main1
 [submodule "games/slope"]
 	path = games/slope
 	url = https://github.com/MartinTintin3/Slope-Game.git
-	branch = main
 [submodule "games/tetris"]
 	path = games/tetris
 	url = https://github.com/cgolden15/tetris.git
-	branch = main
