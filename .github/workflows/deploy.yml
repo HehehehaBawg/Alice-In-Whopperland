@@ -19,5 +19,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           envs: DIR
           script: |
-            cd $DIR
-            touch hello
+            cd ${{ secrets.SSH_PATH }}
+            touch hel
