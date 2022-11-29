@@ -1,4 +1,5 @@
 require("dotenv").config();
+const env = process.env.NODE_ENV || "development";
 
 const express = require("express");
 const https = require("https");
@@ -11,7 +12,7 @@ const { Analytics } = require("analytics");
 const googleAnalytics = require("@analytics/google-analytics").default;
 const googleTagManager = require("@analytics/google-tag-manager");
 const ua = require("universal-analytics");
-const { Visitor } = require("universal-analytics");
+//const { Visitor } = require("universal-analytics");
 const geoip = require("geoip-lite");
 
 /*const Sequelize = require("sequelize");
@@ -33,26 +34,36 @@ Client.sync();*/
 const app = express();
 
 // HTTP -> HTTPS
-express().get("*", (req, res) => res.redirect(`https://${req.headers.host}${req.url}`)).listen(process.env.HTTP_PORT || 80, "0.0.0.0");
 
-const ssl_config = {
-	key: fs.readFileSync(process.env.SSL_KEY_PATH),
-	cert: fs.readFileSync(process.env.SSL_CERT_PATH),
-};
+if (env == "production") {
+	express().get("*", (req, res) => res.redirect(`https://${req.headers.host}${req.url}`)).listen(process.env.HTTP_PORT || 80, "0.0.0.0");
 
-const port = process.env.HTTPS_PORT || 443;
+	const ssl_config = {
+		key: fs.readFileSync(process.env.SSL_KEY_PATH),
+		cert: fs.readFileSync(process.env.SSL_CERT_PATH),
+	};
+	
+	const port = process.env.HTTPS_PORT || 443;
+	
+	https.createServer(ssl_config, app).listen(port, "0.0.0.0", () => {
+		console.log(`HTTPS on port ${port}`);
+	});
+} else if (env == "development") {
+	const port = process.env.HTTP_PORT || 80;
 
-https.createServer(ssl_config, app).listen(port, "0.0.0.0", () => {
-	console.log(`HTTPS on port ${port}`);
-});
+	app.listen(port, "0.0.0.0", () => console.log(`(dev) HTTP on port ${port}`));
+}
 
 const config = require(path.join(__dirname, "config.json"));
 
 const send_analytics = async req => {
-	const geo = geoip.lookup(req.ip);
+	if (dev == "development") return;
 	const a = ua(process.env.GOOGLE_ANALYTICS_ID, req.ip, { strictCidFormat: false })
 	//a.set("uip", req.ip);
-	a.set("geoip", geo.country);
+	try {
+		const geo = geoip.lookup(req.ip);
+		a.set("geoip", geo.country);
+	} catch (_) {}
 
 	a.pageview(req.path).send();
 };

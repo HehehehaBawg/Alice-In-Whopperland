@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "sudo node ."
+		"start": "sudo node .",
+		"dev": "sudo npx nodemon"
 	},
 	"author": "",
 	"license": "MIT",
@@ -21,6 +22,7 @@
 	},
 	"devDependencies": {
 		"@types/sequelize": "^4.28.14",
+		"nodemon": "^2.0.20",
 		"website-scraper": "^5.3.1"
 	}
 }
