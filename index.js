@@ -122,9 +122,10 @@ const game_request = async (req, res) => {
 			const remote_url = game.proxy_url + req.path.replace(path.join("/", config.games_path, game.path), "");
 			try {
 				const file = await axios.get(remote_url);
-				console.log(file.status);
+				if (file.status == 200) fs.writeFile("." + req.path, file.data, error => error ? console.error(error) : "");
 				res.status(file.status).send(file.data);
 			} catch (e) {
+				console.error(e);
 				console.log("coulding find " + remote_url);
 			}
 		} else {

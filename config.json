@@ -51,6 +51,11 @@
 			"path": "appel"
 		},
 		{
+			"name": "Jetpack Joyride",
+			"path": "jetpack-joyride",
+			"proxy_url": "https://html5.gamedistribution.com/17d66951b54e4979b0f24d14cc7423b6"
+		},
+		{
 			"name": "Subway Surfers (Coming Soon)",
 			"path": "subway-surfers",
 			"disabled": true
