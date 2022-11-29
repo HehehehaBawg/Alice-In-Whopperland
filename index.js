@@ -120,12 +120,17 @@ const game_request = async (req, res) => {
 			res.status(200).sendFile(file_path);
 		} else if (game.proxy_url) {
 			const remote_url = game.proxy_url + req.path.replace(path.join("/", config.games_path, game.path), "");
+
+			const query_string = req.url.includes("?") ? req.url.substring(req.url.indexOf("?")) : "";
+
 			try {
-				const file = await axios.get(remote_url);
-				if (file.status == 200) fs.writeFile("." + req.path, file.data, error => error ? console.error(error) : "");
+				console.log(remote_url + query_string);
+				const file = await axios.get(remote_url + query_string);
+				//const file_output = typeof file.data == "object" ? JSON.stringify(file.data) : file.data; // weird json stuff
+				//if (file.status == 200) fs.writeFile("." + req.path, file_output, error => error ? console.error(error) : "");
 				res.status(file.status).send(file.data);
 			} catch (e) {
-				console.error(e);
+				//console.error(e);
 				console.log("coulding find " + remote_url);
 			}
 		} else {

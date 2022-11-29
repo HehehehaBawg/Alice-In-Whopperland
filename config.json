@@ -56,9 +56,9 @@
 			"proxy_url": "https://html5.gamedistribution.com/17d66951b54e4979b0f24d14cc7423b6"
 		},
 		{
-			"name": "Subway Surfers (Coming Soon)",
+			"name": "Subway Surfers",
 			"path": "subway-surfers",
-			"disabled": true
+			"proxy_url": "https://www.itslearning.tk/subway-surfers"
 		},
 		{
 			"name": "Discord (Coming Soon)",
