@@ -21,7 +21,7 @@
 [submodule "games/tetris"]
 	path = games/tetris
 	url = https://github.com/cgolden15/tetris.git
-[submodule "games/gameboy-advance-emulator"]
-	path = games/gameboy-advance-emulator
+[submodule "games/gba-emulator"]
+	path = games/gba-emulator
 	url = https://github.com/ayvacs/gba.js.org
 	branch = main

@@ -51,6 +51,10 @@
 			"path": "appel"
 		},
 		{
+			"name": "GameBoy Advance Emulator (With pre-installed games)",
+			"path": "gba-emulator"
+		},
+		{
 			"name": "Jetpack Joyride (WIP)",
 			"path": "jetpack-joyride",
 			"proxy_url": "https://html5.gamedistribution.com/17d66951b54e4979b0f24d14cc7423b6"
