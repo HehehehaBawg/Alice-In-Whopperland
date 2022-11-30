@@ -20,5 +20,4 @@ jobs:
             git reset --hard HEAD
             git clean -f -d
             git pull
-            git submodule update --remote
-
+            git submodule update --init --recursive --remote
