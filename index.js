@@ -115,7 +115,12 @@ const game_request = async (req, res) => {
 	if (game == undefined) {
 		res.status(404).send("Error 404 - Game not found");
 	} else {
-		const file_path = path.join(__dirname, req.path.replace(req.params.game, game.path));
+		let file_path = path.join(__dirname, req.path.replace(req.params.game, game.path));
+
+		if (game.path == "gba-emulator" && req.path.endsWith("player")) {
+			file_path += ".html";
+		}
+
 		if (fs.existsSync(file_path)) {
 			res.status(200).sendFile(file_path);
 		} else if (game.proxy_url) {
