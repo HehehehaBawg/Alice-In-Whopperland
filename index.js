@@ -49,7 +49,7 @@ if (env == "production") {
 		console.log(`HTTPS on port ${port}`);
 	});
 } else if (env == "development") {
-	const port = process.env.HTTP_PORT || 80;
+	const port = process.env.HTTP_PORT || 8080;
 
 	app.listen(port, "0.0.0.0", () => console.log(`(dev) HTTP on port ${port}`));
 }
