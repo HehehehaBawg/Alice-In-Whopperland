@@ -73,6 +73,18 @@ app.use((req, res, next) => {
 	next();
 });
 
+// crossy road stuff
+app.use((req, res, next) => {
+	if (req.path.startsWith("/static/") && req.headers.referer && req.headers.referer.includes(path.join("/", config.games_path, "crossy-road"))) {
+		const replaced = req.path.replace("/static", path.join("/", config.games_path, "crossy-road", "static"));
+		req.path = replaced;
+		req.url = replaced;
+	}
+	next();
+});
+
+app.get("/")
+
 app.use(express.static("public"));
 
 app.get("/config.json", (req, res) => {
@@ -117,7 +129,7 @@ const game_request = async (req, res) => {
 	} else {
 		let file_path = path.join(__dirname, req.path.replace(req.params.game, game.path));
 
-		if (game.path == "gba-emulator" && req.path.endsWith("player")) {
+		if (game.path == "gba-emulator" && req.path.endsWith("player")) { // weird GBA stuff
 			file_path += ".html";
 		}
 
