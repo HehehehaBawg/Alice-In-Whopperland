@@ -68,6 +68,10 @@
 			"path": "subway-surfers"
 		},
 		{
+			"name": "Chess (Impossible)",
+			"path": "chess"
+		},
+		{
 			"name": "Discord (Coming Soon)",
 			"path": "discord",
 			"proxy_url": "https://discord.com/app",

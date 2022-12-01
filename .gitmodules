@@ -25,3 +25,7 @@
 	path = games/gba-emulator
 	url = https://github.com/ayvacs/gba.js.org
 	branch = main
+[submodule "games/chess"]
+	path = games/chess
+	url = https://github.com/LabinatorSolutions/stockfish-chess-web-gui
+	branch = master
