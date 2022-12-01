@@ -59,6 +59,14 @@
 			"path": "gba-emulator"
 		},
 		{
+			"name": "Subway Surfers",
+			"path": "subway-surfers"
+		},
+		{
+			"name": "Temple Run 2",
+			"path": "temple-run-2"
+		},
+		{
 			"name": "Crossy Road",
 			"path": "crossy-road"
 		},
@@ -66,10 +74,6 @@
 			"name": "Jetpack Joyride (WIP)",
 			"path": "jetpack-joyride",
 			"proxy_url": "https://html5.gamedistribution.com/17d66951b54e4979b0f24d14cc7423b6"
-		},
-		{
-			"name": "Subway Surfers",
-			"path": "subway-surfers"
 		},
 		{
 			"name": "Chess (Impossible)",
