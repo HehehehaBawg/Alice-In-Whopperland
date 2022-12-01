@@ -83,6 +83,13 @@ app.use((req, res, next) => {
 	next();
 });
 
+app.use((req, res, next) => {
+	if ((new RegExp(`^${path.join("/", config.games_path, "vex")}\/vex[0-9]+$`)).test(req.path)) {
+		res.redirect(req.url + "/");
+	}
+	next();
+});
+
 app.get("/")
 
 app.use(express.static("public"));
