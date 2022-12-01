@@ -51,6 +51,10 @@
 			"path": "appel"
 		},
 		{
+			"name": "Vex (3, 4, 5, 6, 7)",
+			"path": "vex"
+		},
+		{
 			"name": "GameBoy Advance Emulator (With pre-installed games)",
 			"path": "gba-emulator"
 		},
