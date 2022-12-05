@@ -1,0 +1,5 @@
+# TODO
+slope: https://github.com/MartinTintin3/Slope-Game
+tetris: https://github.com/cgolden15/tetris
+gba-emulator: https://github.com/ayvacs/gba.js.org
+chess: https://github.com/LabinatorSolutions/stockfish-chess-web-gui

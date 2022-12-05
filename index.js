@@ -15,6 +15,8 @@ const ua = require("universal-analytics");
 //const { Visitor } = require("universal-analytics");
 const geoip = require("geoip-lite");
 
+const ga4_id = process.env.GA4;
+
 /*const Sequelize = require("sequelize");
 const sequelize = new Sequelize("sqlite::memory:");
 
@@ -141,6 +143,19 @@ const game_request = async (req, res) => {
 		}
 
 		if (fs.existsSync(file_path)) {
+			const file = fs.readFileSync(file_path, "utf8");
+			if (ga4_id) file.replace("<head>", `<head>
+			<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4_id}"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){ dataLayer.push(arguments); }
+				gtag('js', new Date());
+
+				gtag('config', '${ga4-id}');
+			</script>
+			`)															
+
 			res.status(200).sendFile(file_path);
 		} else if (game.proxy_url) {
 			const remote_url = game.proxy_url + req.path.replace(path.join("/", config.games_path, game.path), "");
