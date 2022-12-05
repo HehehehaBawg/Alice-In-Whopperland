@@ -159,9 +159,9 @@ const game_request = async (req, res) => {
 					`);
 					res.status(200).send(file);
 				}
+			} else {
+				res.status(200).sendFile(file_path);
 			}
-
-			res.status(200).sendFile(file_path);
 		} else if (game.proxy_url) {
 			const remote_url = game.proxy_url + req.path.replace(path.join("/", config.games_path, game.path), "");
 
