@@ -143,6 +143,7 @@ const game_request = async (req, res) => {
 		}
 
 		if (fs.existsSync(file_path)) {
+			console.log(file_path)
 			if (ga4_id && file_path.endsWith(".html")) {
 				const file = fs.readFileSync(file_path, "utf8");
 				file.replace("<head>", `<head>
