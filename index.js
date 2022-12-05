@@ -143,18 +143,21 @@ const game_request = async (req, res) => {
 		}
 
 		if (fs.existsSync(file_path)) {
-			const file = fs.readFileSync(file_path, "utf8");
-			if (ga4_id && file_path.endsWith(".html")) file.replace("<head>", `<head>
-			<!-- Google tag (gtag.js) -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4_id}"></script>
-			<script>
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){ dataLayer.push(arguments); }
-				gtag('js', new Date());
+			if (ga4_id && file_path.endsWith(".html")) {
+				const file = fs.readFileSync(file_path, "utf8");
+				file.replace("<head>", `<head>
+				<!-- Google tag (gtag.js) -->
+				<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4_id}"></script>
+				<script>
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){ dataLayer.push(arguments); }
+					gtag('js', new Date());
 
-				gtag('config', '${ga4-id}');
-			</script>
-			`)															
+					gtag('config', '${ga4-id}');
+				</script>
+				`);
+				res.status(200).sendFile(file);
+			}
 
 			res.status(200).sendFile(file_path);
 		} else if (game.proxy_url) {
