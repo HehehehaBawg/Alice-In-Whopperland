@@ -154,7 +154,7 @@ const game_request = async (req, res) => {
 						function gtag(){ dataLayer.push(arguments); }
 						gtag('js', new Date());
 
-						gtag('config', '${ga4-id}');
+						gtag('config', '${ga4_id}');
 					</script>
 					`);
 					res.status(200).sendFile(file);
