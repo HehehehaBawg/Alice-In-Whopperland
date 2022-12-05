@@ -146,7 +146,7 @@ const game_request = async (req, res) => {
 			if (ga4_id) { 
 				if (file_path.endsWith(".html") || (file_path.endsWith("/") && fs.existsSync(file_path + "index.html"))) {
 					const file = fs.readFileSync(file_path + (file_path.endsWith("/") ? "index.html" : ""), "utf8");
-					file.replace("<head>", `<head>
+					file = file.replace("<head>", `<head>
 					<!-- Google tag (gtag.js) -->
 					<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4_id}"></script>
 					<script>
