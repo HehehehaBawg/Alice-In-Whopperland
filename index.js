@@ -143,21 +143,22 @@ const game_request = async (req, res) => {
 		}
 
 		if (fs.existsSync(file_path)) {
-			console.log(file_path)
-			if (ga4_id && file_path.endsWith(".html")) {
-				const file = fs.readFileSync(file_path, "utf8");
-				file.replace("<head>", `<head>
-				<!-- Google tag (gtag.js) -->
-				<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4_id}"></script>
-				<script>
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){ dataLayer.push(arguments); }
-					gtag('js', new Date());
+			if (ga4_id) { 
+				if (file_path.endsWith(".html") || (file_path.endsWith("/") && fs.existsSync(file_path + "index.html"))) {
+					const file = fs.readFileSync(file_path + (file_path.endsWith("/") ? "index.html" : ""), "utf8");
+					file.replace("<head>", `<head>
+					<!-- Google tag (gtag.js) -->
+					<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4_id}"></script>
+					<script>
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){ dataLayer.push(arguments); }
+						gtag('js', new Date());
 
-					gtag('config', '${ga4-id}');
-				</script>
-				`);
-				res.status(200).sendFile(file);
+						gtag('config', '${ga4-id}');
+					</script>
+					`);
+					res.status(200).sendFile(file);
+				}
 			}
 
 			res.status(200).sendFile(file_path);
