@@ -157,7 +157,7 @@ const game_request = async (req, res) => {
 						gtag('config', '${ga4_id}');
 					</script>
 					`);
-					if (file_path.endsWith(".html")) console.log(file);
+					console.log(file);
 					res.status(200).send(file);
 				}
 			} else {
