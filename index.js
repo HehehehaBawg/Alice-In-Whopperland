@@ -38,18 +38,27 @@ const app = express();
 // HTTP -> HTTPS
 
 if (env == "production") {
-	express().get("*", (req, res) => res.redirect(`https://${req.headers.host}${req.url}`)).listen(process.env.HTTP_PORT || 80, "0.0.0.0");
-
-	const ssl_config = {
-		key: fs.readFileSync(process.env.SSL_KEY_PATH),
-		cert: fs.readFileSync(process.env.SSL_CERT_PATH),
-	};
-	
 	const port = process.env.HTTPS_PORT || 443;
-	
-	https.createServer(ssl_config, app).listen(port, "0.0.0.0", () => {
+
+	const server = https.createServer(app).listen(port, "0.0.0.0", () => {
 		console.log(`HTTPS on port ${port}`);
 	});
+
+	for (let i = 1; process.env[`DOMAIN${i}`] != undefined; i++) {
+		const certificate = {
+			key: fs.readFileSync(process.env[`DOMAIN${i}_KEY_PATH`]),
+			cert: fs.readFileSync(process.env[`DOMAIN${i}_CERT_PATH`]),
+		};
+
+		server.addContext(process.env[`DOMAIN${i}`], certificate);
+	}
+
+	express().get("*", (req, res) => res.redirect(`https://${req.headers.host}${req.url}`)).listen(process.env.HTTP_PORT || 80, "0.0.0.0");
+
+	/*const ssl_config = {
+		key: fs.readFileSync(process.env.SSL_KEY_PATH),
+		cert: fs.readFileSync(process.env.SSL_CERT_PATH),
+	};*/
 } else if (env == "development") {
 	const port = process.env.HTTP_PORT || 8080;
 
