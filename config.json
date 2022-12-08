@@ -30,6 +30,10 @@
 			"path": "getting-over-it"
 		},
 		{
+			"name": "Pong",
+			"path": "pong"
+		},
+		{
 			"name": "Retrobowl",
 			"path": "retrobowl"
 		},

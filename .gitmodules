@@ -29,3 +29,6 @@
 	path = games/chess
 	url = https://github.com/LabinatorSolutions/stockfish-chess-web-gui
 	branch = master
+[submodule "games/pong"]
+	path = games/pong
+	url = https://github.com/jakesgordon/javascript-pong.git
