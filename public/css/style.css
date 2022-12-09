@@ -9,12 +9,12 @@ body {
 }
 
 @font-face {
-	font-family: ModeSeven;
-	src: url(cern-terminal.woff);
+	font-family: Zig;
+	src: url(zig.ttf);
 }
 
 * {
-	font-family: ModeSeven;
+	font-family: Zig;
 }
 
 ul {
@@ -38,7 +38,6 @@ ul {
 
 p, a, h1, h2, h3, h4, h5, h6 {
 	margin-top: 2em;
-	font-family: Consolas, 'Courier New', monospace;
 	color: rgb(14, 168, 64);
 }
 
@@ -49,4 +48,8 @@ footer {
 
 .game:hover {
 	background-color: rgb(17, 17, 17);
+}
+
+#title {
+	font-family: Consolas, 'Courier New', monospace;
 }
