@@ -21,3 +21,4 @@ jobs:
             git clean -f -d
             git pull
             git submodule update --init --recursive --remote
+            sudo pm2 restart website
