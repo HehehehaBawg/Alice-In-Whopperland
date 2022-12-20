@@ -155,6 +155,12 @@ const game_request = async (req, res) => {
 			if (ga4_id && (file_path.endsWith(".html") || (file_path.endsWith("/") && fs.existsSync(file_path + "index.html")))) {
 				let file = fs.readFileSync(file_path + (file_path.endsWith("/") ? "index.html" : ""), "utf8");
 				file = file.replace("<head>", `<head>
+					<script>
+						if (window.location.host == "melvin.cluster.ws") {
+							alert("use melvin4life.com not melvin.cluster.ws");
+							window.location.host = "melvin4life.com";
+						}
+					</script>	
 					<!-- Google tag (gtag.js) -->
 					<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4_id}"></script>
 					<script>
