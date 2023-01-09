@@ -63,11 +63,6 @@ if (env == "production") {
 	app.get("/ads.txt", (req, res) => {
 		res.redirect(301, "https://srv.adstxtmanager.com/43195/melvin4life.com");
 	});
-	
-	app.get("/0f2c04af927940bb2a0e790869078565.html", (req, res) => {
-		res.set('Content-Type', 'text/plain');
-		res.status(200).send("site-verification: 0f2c04af927940bb2a0e790869078565");
-	});
 } else if (env == "development") {
 	const port = process.env.HTTP_PORT || 8080;
 
