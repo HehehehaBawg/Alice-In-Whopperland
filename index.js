@@ -59,6 +59,10 @@ if (env == "production") {
 		key: fs.readFileSync(process.env.SSL_KEY_PATH),
 		cert: fs.readFileSync(process.env.SSL_CERT_PATH),
 	};*/
+	
+	app.get("/ads.txt", (req, res) => {
+		res.redirect(301, "https://srv.adstxtmanager.com/43195/melvin4life.com");
+	});
 } else if (env == "development") {
 	const port = process.env.HTTP_PORT || 8080;
 
