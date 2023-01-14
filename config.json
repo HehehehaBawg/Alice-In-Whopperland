@@ -6,6 +6,10 @@
 			"path": "slope"
 		},
 		{
+			"name": "Stickman Hook",
+			"path": "stickman-hook"
+		},
+		{
 			"name": "Eaglercraft (MC 1.5)",
 			"path": "eaglercraft-1.5",
 		},
