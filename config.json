@@ -7,7 +7,11 @@
 		},
 		{
 			"name": "Eaglercraft (MC 1.5)",
-			"path": "eaglercraft"
+			"path": "eaglercraft-1.5",
+		},
+		{
+			"name": "Eaglercraft (MC 1.8)",
+			"path": "eaglercraft-1.8",
 		},
 		{
 			"name": "Flappy Bird",
