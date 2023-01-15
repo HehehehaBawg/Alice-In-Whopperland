@@ -67,6 +67,10 @@
 			"path": "vex"
 		},
 		{
+			"name": "Evolution",
+			"path": "evolution"
+		},
+		{
 			"name": "GameBoy Advance Emulator (With pre-installed games)",
 			"path": "gba-emulator"
 		},
