@@ -100,9 +100,8 @@
 			"path": "chess"
 		},
 		{
-			"name": "Krunker (Coming Soon)",
-			"path": "krunker",
-			"disabled": true
+			"name": "Krunker",
+			"path": "krunker"
 		},
 		{
 			"name": "Discord (Coming Soon. jk)",
