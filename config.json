@@ -46,7 +46,11 @@
 			"path": "retrobowl"
 		},
 		{
-			"name": "Geometry Dash",
+			"name": "Fruit Ninja",
+			"path": "fruit-ninja"
+		},
+		{
+			"name": "Geometry Dash (Scratch)",
 			"path": "geometry-dash"
 		},
 		{
