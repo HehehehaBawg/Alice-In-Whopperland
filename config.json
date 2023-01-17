@@ -3,31 +3,38 @@
 	"games": [
 		{
 			"name": "Slope",
-			"path": "slope"
+			"path": "slope",
+			"ads": "false"
 		},
 		{
 			"name": "Stickman Hook",
-			"path": "stickman-hook"
+			"path": "stickman-hook",
+			"ads": "false"
 		},
 		{
 			"name": "Eaglercraft (MC 1.5)",
-			"path": "eaglercraft-1.5"
+			"path": "eaglercraft-1.5",
+			"ads": "false"
 		},
 		{
 			"name": "Eaglercraft (MC 1.8)",
-			"path": "eaglercraft-1.8"
+			"path": "eaglercraft-1.8",
+			"ads": "false"
 		},
 		{
 			"name": "Flappy Bird",
-			"path": "flappy-bird"
+			"path": "flappy-bird",
+			"ads": "true"
 		},
 		{
 			"name": "2048",
-			"path": "2048"
+			"path": "2048",
+			"ads": "false"
 		},
 		{
 			"name": "Tetris",
-			"path": "tetris"
+			"path": "tetris",
+			"ads": "true"
 		},
 		{
 			"name": "Cookie Clicker",
@@ -35,77 +42,95 @@
 		},
 		{
 			"name": "Getting Over It",
-			"path": "getting-over-it"
+			"path": "getting-over-it",
+			"ads": "false"
 		},
 		{
 			"name": "Pong",
-			"path": "pong"
+			"path": "pong",
+			"ads": "false"
 		},
 		{
 			"name": "Retrobowl",
-			"path": "retrobowl"
+			"path": "retrobowl",
+			"ads": "false"
 		},
 		{
 			"name": "Fruit Ninja",
-			"path": "fruit-ninja"
+			"path": "fruit-ninja",
+			"ads": "false"
 		},
 		{
 			"name": "Geometry Dash (Scratch)",
-			"path": "geometry-dash"
+			"path": "geometry-dash",
+			"ads": "false"
 		},
 		{
 			"name": "Chrome Dino Game",
-			"path": "dino-game"
+			"path": "dino-game",
+			"ads": "false"
 		},
 		{
 			"name": "1v1.lol",
 			"path": "1v1",
-			"proxy_url": "https://1v1.lol"
+			"proxy_url": "https://1v1.lol",
+			"ads": "true"
 		},
 		{
 			"name": "Appel",
-			"path": "appel"
+			"path": "appel",
+			"ads": "false"
 		},
 		{
 			"name": "Vex (3, 4, 5, 6, 7)",
-			"path": "vex"
+			"path": "vex",
+			"ads": "true"
 		},
 		{
 			"name": "Evolution",
-			"path": "evolution"
+			"path": "evolution",
+			"ads": "false"
 		},
 		{
 			"name": "GameBoy Advance Emulator (With pre-installed games)",
-			"path": "gba-emulator"
+			"path": "gba-emulator",
+			"ads": "false"
 		},
 		{
-			"name": "Krunker",
-			"path": "krunker"
+			"name": "Krunker (Broken)",
+			"path": "krunker",
+			"disabled": true,
 		},
 		{
 			"name": "Subway Surfers",
-			"path": "subway-surfers"
+			"path": "subway-surfers",
+			"ads": "false"
 		},
 		{
 			"name": "Temple Run 2",
-			"path": "temple-run-2"
+			"path": "temple-run-2",
+			"ads": "false"
 		},
 		{
 			"name": "World's Hardest Game",
-			"path": "worlds-hardest-game"
+			"path": "worlds-hardest-game",
+			"ads": "false"
 		},
 		{
 			"name": "Crossy Road",
-			"path": "crossy-road"
+			"path": "crossy-road",
+			"ads": "true"
 		},
 		{
 			"name": "Jetpack Joyride (WIP)",
 			"path": "jetpack-joyride",
-			"proxy_url": "https://html5.gamedistribution.com/17d66951b54e4979b0f24d14cc7423b6"
+			"proxy_url": "https://html5.gamedistribution.com/17d66951b54e4979b0f24d14cc7423b6",
+			"ads": "false"
 		},
 		{
 			"name": "Chess (Impossible)",
-			"path": "chess"
+			"path": "chess",
+			"ads": "false"
 		},
 		{
 			"name": "Discord (Coming Soon. jk)",
