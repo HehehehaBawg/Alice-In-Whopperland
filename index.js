@@ -174,7 +174,7 @@ const game_request = async (req, res) => {
 
 						gtag('config', '${ga4_id}');
 					</script>
-					${game.ads ? '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2768711832153998" crossorigin="anonymous"></script>' : ""}
+					${game.ads ? '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-' + process.env.GOOGLE_ADSENSE_ID + '" crossorigin="anonymous"></script>' : ""}
 				`);
 				res.status(200).send(file);
 			} else {
