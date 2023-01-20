@@ -66,13 +66,13 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
 	let file = fs.readFileSync(path.join(__dirname, "public", "index.html"), "utf8");
-	file = file.replace("<head>", `<head>${generate_extra_head_html(game.ads)}`);
+	file = file.replace("<head>", `<head>${generate_extra_head_html(true)}`);
 	res.status(200).send(file);
 });
 
 app.get("/index.html", (req, res) => {
 	let file = fs.readFileSync(path.join(__dirname, "public", "index.html"), "utf8");
-	file = file.replace("<head>", `<head>${generate_extra_head_html(game.ads)}`);
+	file = file.replace("<head>", `<head>${generate_extra_head_html(true)}`);
 	res.status(200).send(file);
 });
 
