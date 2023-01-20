@@ -8,12 +8,12 @@ const fs = require("fs");
 const axios = require("axios").default;
 
 // Analytics
-const { Analytics } = require("analytics");
-const googleAnalytics = require("@analytics/google-analytics").default;
-const googleTagManager = require("@analytics/google-tag-manager");
-const ua = require("universal-analytics");
+//const { Analytics } = require("analytics");
+//const googleAnalytics = require("@analytics/google-analytics").default;
+//const googleTagManager = require("@analytics/google-tag-manager");
+//const ua = require("universal-analytics");
 //const { Visitor } = require("universal-analytics");
-const geoip = require("geoip-lite");
+//const geoip = require("geoip-lite");
 
 /*const Sequelize = require("sequelize");
 const sequelize = new Sequelize("sqlite::memory:");
@@ -81,10 +81,10 @@ const send_analytics = async req => {
 	a.pageview(req.path).send();
 };
 
-app.use((req, res, next) => {
-	if (req.path == "/") send_analytics(req);
-	next();
-});
+//app.use((req, res, next) => {
+//	if (req.path == "/") send_analytics(req);
+//	next();
+//});
 
 // crossy road stuff
 app.use((req, res, next) => {
