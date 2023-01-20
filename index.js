@@ -62,7 +62,17 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.get("/")
+app.get("/", (req, res) => {
+	let file = fs.readFileSync(path.join(__dirname, "public", "index.html"), "utf8");
+	file = file.replace("<head>", `<head>${generate_extra_head_html(game.ads)}`);
+	res.status(200).send(file);
+});
+
+app.get("/index.html", (req, res) => {
+	let file = fs.readFileSync(path.join(__dirname, "public", "index.html"), "utf8");
+	file = file.replace("<head>", `<head>${generate_extra_head_html(game.ads)}`);
+	res.status(200).send(file);
+});
 
 app.use(express.static("public"));
 
@@ -151,7 +161,7 @@ const game_request = async (req, res) => {
 		}
 
 		if (fs.existsSync(file_path)) {
-			if (process.env.GOOGLE_GA4_ID && process.env.GOOGLE_UA_ID && (file_path.endsWith(".html") || (file_path.endsWith("/") && fs.existsSync(file_path + "index.html")))) {
+			if (file_path.endsWith(".html") || (file_path.endsWith("/") && fs.existsSync(file_path + "index.html"))) {
 				let file = fs.readFileSync(file_path + (file_path.endsWith("/") ? "index.html" : ""), "utf8");
 				file = file.replace("<head>", `<head>${generate_extra_head_html(game.ads)}`);
 				res.status(200).send(file);
