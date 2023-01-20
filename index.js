@@ -183,7 +183,6 @@ app.get(`/${config.games_path.replace("/", "")}/:game`, async (req, res) => {
 	if (!req.url.endsWith("/")) {
 		res.status(301).redirect(req.url + "/");
 	} else {
-		send_analytics(req);
 		await game_request(req, res);
 	}
 });
