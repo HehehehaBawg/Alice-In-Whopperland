@@ -15,8 +15,6 @@ const ua = require("universal-analytics");
 //const { Visitor } = require("universal-analytics");
 const geoip = require("geoip-lite");
 
-const ga4_id = process.env.GA4;
-
 /*const Sequelize = require("sequelize");
 const sequelize = new Sequelize("sqlite::memory:");
 
@@ -156,7 +154,7 @@ const game_request = async (req, res) => {
 		}
 
 		if (fs.existsSync(file_path)) {
-			if (ga4_id && (file_path.endsWith(".html") || (file_path.endsWith("/") && fs.existsSync(file_path + "index.html")))) {
+			if (process.env.GOOGLE_GA4_ID && process.env.GOOGLE_UA_ID && (file_path.endsWith(".html") || (file_path.endsWith("/") && fs.existsSync(file_path + "index.html")))) {
 				let file = fs.readFileSync(file_path + (file_path.endsWith("/") ? "index.html" : ""), "utf8");
 				file = file.replace("<head>", `<head>
 					<script>
@@ -164,17 +162,26 @@ const game_request = async (req, res) => {
 							alert("use melvin4life.com not melvin.cluster.ws");
 							window.location.host = "melvin4life.com";
 						}
-					</script>	
+					</script>
 					<!-- Google tag (gtag.js) -->
-					<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4_id}"></script>
+					<script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_GA4_ID}"></script>
 					<script>
 						window.dataLayer = window.dataLayer || [];
 						function gtag(){ dataLayer.push(arguments); }
 						gtag('js', new Date());
 
-						gtag('config', '${ga4_id}');
+						gtag('config', '${process.env.GOOGLE_GA4_ID}');
 					</script>
-					${game.ads ? '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-' + process.env.GOOGLE_ADSENSE_ID + '" crossorigin="anonymous"></script>' : ""}
+					<!-- Google tag (gtag.js) -->
+					<script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_UA_ID}"></script>
+					<script>
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+
+						gtag('config', '${process.env.GOOGLE_UA_ID}');
+					</script>
+					${game.ads && process.env.GOOGLE_ADSENSE_ID ? '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-' + process.env.GOOGLE_ADSENSE_ID + '" crossorigin="anonymous"></script>' : ""}
 				`);
 				res.status(200).send(file);
 			} else {
