@@ -141,6 +141,44 @@ app.get("/assets/*", async (req, res) => {
 	}
 });
 
+const generate_extra_head_html = ads_enabled => {
+	let string = `<script>
+		if (window.location.host == "melvin.cluster.ws") {
+			alert("use melvin4life.com not melvin.cluster.ws");
+			window.location.host = "melvin4life.com";
+		}
+	</script>`;
+	
+	if (process.env.GOOGLE_GA4_ID) {
+		string += `
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_GA4_ID}"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){ dataLayer.push(arguments); }
+			gtag('js', new Date());
+
+			gtag('config', '${process.env.GOOGLE_GA4_ID}');
+		</script>`;
+	}
+	if (process.env.GOOGLE_UA_ID) {
+		string += `
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_UA_ID}"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', '${process.env.GOOGLE_UA_ID}');
+		</script>`;
+	}
+	if (ads_enabled && process.env.GOOGLE_ADSENSE_ID) {
+		string += `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${process.env.GOOGLE_ADSENSE_ID}" crossorigin="anonymous"></script>`;
+	}
+	return string;
+};
+
 const game_request = async (req, res) => {
 	const game = config.games.find(g => g.path == req.params.game);
 
@@ -156,33 +194,7 @@ const game_request = async (req, res) => {
 		if (fs.existsSync(file_path)) {
 			if (process.env.GOOGLE_GA4_ID && process.env.GOOGLE_UA_ID && (file_path.endsWith(".html") || (file_path.endsWith("/") && fs.existsSync(file_path + "index.html")))) {
 				let file = fs.readFileSync(file_path + (file_path.endsWith("/") ? "index.html" : ""), "utf8");
-				file = file.replace("<head>", `<head>
-					<script>
-						if (window.location.host == "melvin.cluster.ws") {
-							alert("use melvin4life.com not melvin.cluster.ws");
-							window.location.host = "melvin4life.com";
-						}
-					</script>
-					<!-- Google tag (gtag.js) -->
-					<script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_GA4_ID}"></script>
-					<script>
-						window.dataLayer = window.dataLayer || [];
-						function gtag(){ dataLayer.push(arguments); }
-						gtag('js', new Date());
-
-						gtag('config', '${process.env.GOOGLE_GA4_ID}');
-					</script>
-					<!-- Google tag (gtag.js) -->
-					<script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_UA_ID}"></script>
-					<script>
-						window.dataLayer = window.dataLayer || [];
-						function gtag(){dataLayer.push(arguments);}
-						gtag('js', new Date());
-
-						gtag('config', '${process.env.GOOGLE_UA_ID}');
-					</script>
-					${game.ads && process.env.GOOGLE_ADSENSE_ID ? '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-' + process.env.GOOGLE_ADSENSE_ID + '" crossorigin="anonymous"></script>' : ""}
-				`);
+				file = file.replace("<head>", `<head>${generate_extra_head_html(game.ads)}`);
 				res.status(200).send(file);
 			} else {
 				res.status(200).sendFile(file_path);
