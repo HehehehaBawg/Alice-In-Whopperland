@@ -62,6 +62,8 @@ app.use((req, res, next) => {
 	next();
 });
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
 	let file = fs.readFileSync(path.join(__dirname, "public", "index.html"), "utf8");
 	file = file.replace("<head>", `<head>${generate_extra_head_html(game.ads)}`);
@@ -73,8 +75,6 @@ app.get("/index.html", (req, res) => {
 	file = file.replace("<head>", `<head>${generate_extra_head_html(game.ads)}`);
 	res.status(200).send(file);
 });
-
-app.use(express.static("public"));
 
 app.get("/config.json", (req, res) => {
 	res.sendFile(path.join(__dirname, "config.json"));
