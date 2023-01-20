@@ -7,30 +7,6 @@ const path = require("path");
 const fs = require("fs");
 const axios = require("axios").default;
 
-// Analytics
-//const { Analytics } = require("analytics");
-//const googleAnalytics = require("@analytics/google-analytics").default;
-//const googleTagManager = require("@analytics/google-tag-manager");
-//const ua = require("universal-analytics");
-//const { Visitor } = require("universal-analytics");
-//const geoip = require("geoip-lite");
-
-/*const Sequelize = require("sequelize");
-const sequelize = new Sequelize("sqlite::memory:");
-
-const Client = sequalize.define("Client", {
-	uuid: {
-		type: DataTypes.UUID,
-		allowNull: false,
-	},
-	ip: {
-		type: Sequelize.DataTypes.STRING,
-	}
-});
-Client.sync();*/
-
-//const analytics = ua(process.env.GOOGLE_ANALYTICS_ID);
-
 const app = express();
 
 // HTTP -> HTTPS
@@ -68,23 +44,6 @@ if (env == "production") {
 }
 
 const config = require(path.join(__dirname, "config.json"));
-
-const send_analytics = async req => {
-	if (env == "development") return;
-	const a = ua(process.env.GOOGLE_ANALYTICS_ID, req.ip, { strictCidFormat: false })
-	//a.set("uip", req.ip);
-	try {
-		const geo = geoip.lookup(req.ip);
-		a.set("geoip", geo.country);
-	} catch (_) {}
-
-	a.pageview(req.path).send();
-};
-
-//app.use((req, res, next) => {
-//	if (req.path == "/") send_analytics(req);
-//	next();
-//});
 
 // crossy road stuff
 app.use((req, res, next) => {
