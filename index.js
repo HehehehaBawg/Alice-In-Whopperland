@@ -135,11 +135,11 @@ const generate_extra_head_html = ads_enabled => {
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_UA_ID}"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 
-			gtag('config', '${process.env.GOOGLE_UA_ID}');
+		  gtag('config', '${process.env.GOOGLE_UA_ID}');
 		</script>`;
 	}
 	if (ads_enabled && process.env.GOOGLE_ADSENSE_ID) {
