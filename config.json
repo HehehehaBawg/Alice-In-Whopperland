@@ -65,6 +65,10 @@
 			"ads": "false"
 		},
 		{
+			"name": "Bitlife",
+			"path": "bitlife"
+		},
+		{
 			"name": "Geometry Dash (Scratch)",
 			"path": "geometry-dash",
 			"ads": "false"
