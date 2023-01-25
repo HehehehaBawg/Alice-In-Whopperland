@@ -41,6 +41,10 @@
 			"path": "cookie-clicker"
 		},
 		{
+			"name": "Superhot",
+			"path": "superhot"
+		},
+		{
 			"name": "Getting Over It",
 			"path": "getting-over-it",
 			"ads": "false"
