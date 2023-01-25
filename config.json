@@ -69,6 +69,10 @@
 			"path": "bitlife"
 		},
 		{
+			"name": "Escaping the Prison",
+			"path": "escaping-the-prison"
+		},
+		{
 			"name": "Geometry Dash (Scratch)",
 			"path": "geometry-dash",
 			"ads": "false"
