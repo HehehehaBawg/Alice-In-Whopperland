@@ -32,3 +32,6 @@
 [submodule "games/pong"]
 	path = games/pong
 	url = https://github.com/jakesgordon/javascript-pong.git
+[submodule "games/happy-wheels"]
+	path = games/happy-wheels
+	url = https://github.com/MrSnailman/Happy-Wheels-Source-Code.git

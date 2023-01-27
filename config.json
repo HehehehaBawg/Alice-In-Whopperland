@@ -22,6 +22,10 @@
 			"ads": "false"
 		},
 		{
+			"name": "Happy Wheels",
+			"path": "happy-wheels"
+		},
+		{
 			"name": "Flappy Bird",
 			"path": "flappy-bird",
 			"ads": "true"
