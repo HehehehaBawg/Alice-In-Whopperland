@@ -111,12 +111,7 @@ app.get("/assets/*", async (req, res) => {
 });
 
 const generate_extra_head_html = ads_enabled => {
-	let string = `<script>
-		if (window.location.host == "melvin.cluster.ws") {
-			alert("use melvin4life.com not melvin.cluster.ws");
-			window.location.host = "melvin4life.com";
-		}
-	</script>`;
+	let string = ``;
 	
 	if (process.env.GOOGLE_GA4_ID) {
 		string += `
