@@ -2,6 +2,10 @@
 	"games_path": "games/",
 	"games": [
 		{
+			"name": "Paper.io 2",
+			"path": "paper.io-2"
+		},
+		{
 			"name": "Slope",
 			"path": "slope",
 			"ads": "false"
