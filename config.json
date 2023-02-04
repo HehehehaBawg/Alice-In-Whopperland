@@ -26,6 +26,14 @@
 			"ads": "false"
 		},
 		{
+			"name": "WebGL Fluid Simulation",
+			"path": "webgl-fluid-simulation"
+		},
+		{
+			"name": "Pacman",
+			"path": "pacman"
+		},
+		{
 			"name": "Happy Wheels",
 			"path": "happy-wheels"
 		},

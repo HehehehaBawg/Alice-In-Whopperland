@@ -35,3 +35,6 @@
 [submodule "games/happy-wheels"]
 	path = games/happy-wheels
 	url = https://github.com/MrSnailman/Happy-Wheels-Source-Code.git
+[submodule "games/webgl-fluid-simulation"]
+	path = games/webgl-fluid-simulation
+	url = https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.git
