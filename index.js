@@ -6,6 +6,7 @@ const https = require("https");
 const path = require("path");
 const fs = require("fs");
 const axios = require("axios").default;
+const proxy = require("http-proxy-middleware");
 
 const app = express();
 
@@ -83,6 +84,8 @@ app.get("/config.json", (req, res) => {
 app.get("/games", (req, res) => {
 	res.status(301).redirect("/");
 });
+
+app.use(proxy('/snapchat', { target: 'http://web.snapchat.com' }));
 
 // discord stuff
 app.get("/assets/*", async (req, res) => {
