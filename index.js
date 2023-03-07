@@ -86,6 +86,7 @@ app.get("/games", (req, res) => {
 });
 
 app.use(proxy('/snapchat', { target: 'http://web.snapchat.com' }));
+app.use(proxy('/chatgpt', { target: 'http://chat.openai.com' }));
 
 // discord stuff
 app.get("/assets/*", async (req, res) => {
