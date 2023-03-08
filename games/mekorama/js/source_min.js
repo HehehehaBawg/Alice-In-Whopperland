@@ -6,13 +6,13 @@ PokiSDK.init().then(()=>{setPokiInited();}).catch(()=>{setPokiInited();});}
 function gameLoadingFinished(){PokiSDK.gameLoadingFinished();}
 function initSdk(){initPokiSdk();}
 function startGameSdk(){startGame();}
-function adInterstitialLoad(){setTimeout(()=>Module.ccall("ad_interstitial_on_loaded","v",["number"],[1]),100);}
-function adInterstitialShow(){PokiSDK.commercialBreak().then(()=>{Module.ccall("ad_interstitial_on_showed","v",["number"],[1]);});}
-function adRewardedLoad(){setTimeout(()=>Module.ccall("ad_rewarded_on_loaded","v",["number"],[1]),100);}
-function adRewardedShow(){pokiEnsureStop();PokiSDK.rewardedBreak().then((success)=>{if(success){Module.ccall("ad_rewarded_on_reward","v");}
-else{}
-Module.ccall("ad_rewarded_on_showed","v",["number"],[success]);});}
-function adInit(){setTimeout(()=>Module.ccall("ad_on_inited","v"),100);}
+//function adInterstitialLoad(){setTimeout(()=>Module.ccall("ad_interstitial_on_loaded","v",["number"],[1]),100);}
+//function adInterstitialShow(){PokiSDK.commercialBreak().then(()=>{Module.ccall("ad_interstitial_on_showed","v",["number"],[1]);});}
+//function adRewardedLoad(){setTimeout(()=>Module.ccall("ad_rewarded_on_loaded","v",["number"],[1]),100);}
+//function adRewardedShow(){pokiEnsureStop();PokiSDK.rewardedBreak().then((success)=>{if(success){Module.ccall("ad_rewarded_on_reward","v");}
+//else{}
+//Module.ccall("ad_rewarded_on_showed","v",["number"],[success]);});}
+//function adInit(){setTimeout(()=>Module.ccall("ad_on_inited","v"),100);}
 var postRunDone=false;var theDomLoaded=false;var sdkInited=false;var gameReadyToStart=false;var requestedCanvas=false;var adblocker=false;var gameStarted=false;var updatedScreenSize=false;var startupTimeStr="";var loadProgressFrac=0;var fakeProgressPercentStart=80+Math.random()*15;window.addEventListener('DOMContentLoaded',domContentLoaded);window.addEventListener('load',function(){console.log("Load event received");if(inIframe()){document.addEventListener('click',ev=>{let canvas=document.getElementById('canvas');if(canvas){canvas.focus();}});}});function inIframe(){try{return window.self!==window.top;}catch(e){return true;}}
 function updateLoadProgress(){let progressElement=document.getElementById('progress');if(progressElement){progressElement.value=Math.round(loadProgressFrac*fakeProgressPercentStart);progressElement.max=100;}
 if(loadProgressFrac>=1){console.log("Loading done");tryStartGame();}}
