@@ -34,6 +34,10 @@
 			"path": "roblox"
 		},
 		{
+			"name": "Among Us",
+			"path": "among-us"
+		},
+		{
 			"name": "WebGL Fluid Simulation",
 			"path": "webgl-fluid-simulation"
 		},
