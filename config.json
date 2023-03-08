@@ -34,6 +34,10 @@
 			"path": "roblox"
 		},
 		{
+			"name": "Bloons Tower Defense",
+			"path": "bloonstd"
+		},
+		{
 			"name": "Among Us",
 			"path": "among-us"
 		},
