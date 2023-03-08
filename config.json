@@ -26,6 +26,10 @@
 			"ads": "false"
 		},
 		{
+			"name": "Mekorama",
+			"path": "mekorama"
+		},
+		{
 			"name": "WebGL Fluid Simulation",
 			"path": "webgl-fluid-simulation"
 		},
