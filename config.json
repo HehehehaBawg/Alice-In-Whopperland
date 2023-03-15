@@ -67,10 +67,6 @@
 			"path": "slither.io"
 		},
 		{
-			"name": "DOOM",
-			"path": "doom"
-		},
-		{
 			"name": "2048",
 			"path": "2048",
 			"ads": "false"
