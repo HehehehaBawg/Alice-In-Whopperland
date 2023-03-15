@@ -71,6 +71,10 @@
 			"path": "doom"
 		},
 		{
+			"name": "Cell Machine",
+			"path": "cell-machine"
+		},
+		{
 			"name": "2048",
 			"path": "2048",
 			"ads": "false"
