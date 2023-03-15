@@ -39,7 +39,6 @@
 		},
 		{
 			"name": "Bloons Tower Defense 2",
-			"path": "bloonstd2"
 		},
 		{
 			"name": "Among Us",
@@ -61,6 +60,10 @@
 			"name": "Flappy Bird",
 			"path": "flappy-bird",
 			"ads": "true"
+		},
+		{
+			"name": "Slither.io",
+			"path": "slither.io"
 		},
 		{
 			"name": "2048",
