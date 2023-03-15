@@ -98,6 +98,10 @@
 			"ads": "false"
 		},
 		{
+			"name": "Plants vs. Zombies",
+			"path": "plants-vs-zombies"
+		},
+		{
 			"name": "Pong",
 			"path": "pong",
 			"ads": "false"
