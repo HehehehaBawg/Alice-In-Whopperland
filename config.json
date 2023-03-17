@@ -125,6 +125,10 @@
 			"path": "escaping-the-prison"
 		},
 		{
+			"name": "Circle Wars",
+			"path": "circle-wars"
+		},
+		{
 			"name": "Geometry Dash (Scratch)",
 			"path": "geometry-dash",
 			"ads": "false"
