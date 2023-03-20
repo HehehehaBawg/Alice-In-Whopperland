@@ -38,3 +38,6 @@
 [submodule "games/webgl-fluid-simulation"]
 	path = games/webgl-fluid-simulation
 	url = https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.git
+[submodule "games/minesweeper"]
+	path = games/minesweeper
+	url = https://github.com/Joeynoh/HTML5-Minesweeper.git

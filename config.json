@@ -50,6 +50,10 @@
 			"path": "webgl-fluid-simulation"
 		},
 		{
+			"name": "Minesweeper",
+			"path": "minesweeper"
+		},
+		{
 			"name": "Pacman",
 			"path": "pacman"
 		},
