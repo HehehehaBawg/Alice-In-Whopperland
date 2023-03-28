@@ -54,6 +54,10 @@
 			"path": "minesweeper"
 		},
 		{
+			"name": "Hill Climb Racing (Scratch)",
+			"path": "hill-climb-racing"
+		},
+		{
 			"name": "Pacman",
 			"path": "pacman"
 		},
