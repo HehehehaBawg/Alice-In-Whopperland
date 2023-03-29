@@ -41,3 +41,6 @@
 [submodule "games/minesweeper"]
 	path = games/minesweeper
 	url = https://github.com/Joeynoh/HTML5-Minesweeper.git
+[submodule "games/conways-game-of-life"]
+	path = games/conways-game-of-life
+	url = https://github.com/copy/life.git

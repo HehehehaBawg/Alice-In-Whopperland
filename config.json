@@ -163,6 +163,10 @@
 			"ads": "true"
 		},
 		{
+			"name": "Conway's Game of Life",
+			"path": "conways-game-of-life"
+		},
+		{
 			"name": "Evolution",
 			"path": "evolution",
 			"ads": "false"
