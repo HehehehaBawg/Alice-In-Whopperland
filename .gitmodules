@@ -44,3 +44,7 @@
 [submodule "games/conways-game-of-life"]
 	path = games/conways-game-of-life
 	url = https://github.com/copy/life.git
+[submodule "games/math-number-game"]
+	path = games/math-number-game
+	url = https://github.com/MartinTintin3/MathNumberGame
+	branch = master
