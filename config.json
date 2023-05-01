@@ -202,6 +202,10 @@
 			"ads": "true"
 		},
 		{
+			"name": "Durak",
+			"path": "durak"
+		},
+		{
 			"name": "Google Feud",
 			"path": "google-feud"
 		},
