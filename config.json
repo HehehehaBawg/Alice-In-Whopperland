@@ -181,6 +181,10 @@
 			"path": "epic-ninja"
 		},
 		{
+			"name": "Epic Ninja v2",
+			"path": "epic-ninja2"
+		},
+		{
 			"name": "Krunker (Broken)",
 			"path": "krunker",
 			"disabled": true
