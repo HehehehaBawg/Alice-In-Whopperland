@@ -120,6 +120,10 @@
 			"ads": "false"
 		},
 		{
+			"name": "Griffpatch's Tower Defence",
+			"path": "griffpatch-tower-defence"
+		},
+		{
 			"name": "Fruit Ninja",
 			"path": "fruit-ninja",
 			"ads": "false"
